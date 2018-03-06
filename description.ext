@@ -1,0 +1,15 @@
+/*	Respawning stuff	*/
+Respawn = 3; // Respawn type. See ? https://community.bistudio.com/wiki/Arma_3_Respawn
+respawnButton = 1; // Respawn button
+RespawnDelay = 5; // Respawn delay
+RespawnDialog = 0; // Scoreboard
+respawnTemplates[] = {"MenuPosition"}; // You can pick which spawnpoint to respawn at
+/*--------------------------------------------------*/
+
+DisabledAI = 1;
+#include "VVS\menu.h"
+
+class CfgFunctions {
+	#include "VehicleRespawn\CfgFunctions.hpp"
+	#include "VVS\Functions.h"
+};
