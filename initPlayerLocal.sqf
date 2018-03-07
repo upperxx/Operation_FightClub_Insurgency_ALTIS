@@ -1,0 +1,1 @@
+[] execVM "killfeed\killfeed.sqf";

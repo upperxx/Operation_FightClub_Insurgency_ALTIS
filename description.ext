@@ -8,8 +8,35 @@ respawnTemplates[] = {"MenuPosition"}; // You can pick which spawnpoint to respa
 
 DisabledAI = 1;
 #include "VVS\menu.h"
+#include "killfeed\dialogs\common.hpp"
+
+#include "ATM_airdrop\dialog.hpp"
+
+class CfgSounds
+{
+   sounds[] = {Vent,Vent2,Para};
+
+	class Vent {name="Vent";sound[]={ATM_airdrop\data\Vent.ogg,db-11,1.0};titles[] = {};};
+	class Vent2 {name="Vent2";sound[]={ATM_airdrop\data\Vent2.ogg,db-11,1.0};titles[] = {};};
+	class Para {name="Para";sound[]={ATM_airdrop\data\parachute.ogg,db-11,1.0};titles[] = {};};
+
+};
 
 class CfgFunctions {
-	#include "VehicleRespawn\CfgFunctions.hpp"
 	#include "VVS\Functions.h"
+	
+	class killfeed {
+		tag = "kill";
+		class functions {
+			file = "killfeed\functions";
+			class killfeedMain {};
+			class killfeedCompile {};
+			class killfeedType {};
+			class killfeedRender {};
+		};
+	};
+};
+
+class RscTitles {
+    #include "killfeed\dialogs\titles.hpp"
 };
